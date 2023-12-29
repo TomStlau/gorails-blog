@@ -11,10 +11,10 @@ class BlogPost < ApplicationRecord
   end
 
   def published?
-    !draft?
+    !draft? && !scheduled?
   end
 
   def scheduled?
-    published_at > Time.current
+    !draft? && published_at > Time.current
   end
 end
