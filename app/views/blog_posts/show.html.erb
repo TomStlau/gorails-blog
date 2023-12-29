@@ -2,7 +2,7 @@
 <div  class="min-h-screen text-center flex flex-col justify-between border-black border-r-2 border-l-2" >
     <h1> <%=@blog_post.title%> </h1>
     
-    <p class="inl"> <%=@blog_post.body%> </p>
+    <p class="inl"> <%=@blog_post.content%> </p>
     
     <div class="flex gap-5 justify-center items-center ">
         <%= link_to "Back", blog_posts_path %>

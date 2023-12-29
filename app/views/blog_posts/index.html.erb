@@ -11,8 +11,8 @@
                     <h2 class="text-red-700">Scheduled</h2>
                 <% end %>
                     <h2 > <%= link_to post.title, post, class:"text-red-700"%> </h2>
-                    <p><%= truncate(post.body, length: 220) %></p>
-                </div>
+                    <p><%= post.content %></p>
+                    </div>
             <% end %>
 
         <% if user_signed_in? %>

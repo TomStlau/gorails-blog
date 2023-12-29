@@ -2,7 +2,7 @@ require "test_helper"
 
 class BlogPostTest < ActiveSupport::TestCase
   # test "the truth" do
-  #   assert true
+#   assert true
   # end
 
   test "draft? returns true when published_at is nil" do
