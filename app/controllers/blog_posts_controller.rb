@@ -6,6 +6,9 @@ class BlogPostsController < ApplicationController
     @blog_posts = user_signed_in? ? BlogPost.sorted : BlogPost.published.sorted
 
     @pagy, @records = pagy(@blog_posts, items: 7)
+    rescue Pagy::OverflowError
+      redirect_to root_path(page: 1)
+
   end
 
   def show
