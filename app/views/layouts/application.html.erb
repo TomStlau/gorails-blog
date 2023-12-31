@@ -12,27 +12,25 @@
   </head>
 
   <body class="prose mx-auto">
-    <% if flash[:notice] %>
-      <p class="notice bg-green-500 text-white"> <%= notice %> </p>
-    <% end %>
-
-    <% if flash[:alert]%>
-      <p class="alert bg-red-500 text-white"> <%= alert %> </p>
-    <% end %>
-
-    <div class="absolute left-5 top-5">
-      <% if user_signed_in? %>
-        <%# <%= link_to "Profile", edit_user_registration_path %> 
-        <%= button_to "Logout", destroy_user_session_path, method: "delete", class: "bg-gray-200 px-4 py-2 rounded hover:brightness-90"%>
-      <% else %>
-        <%# <%= link_to "Login", new_user_session_path %>
-        <%# <%= link_to "Sign Up", new_user_registration_path %> 
-      <%end%>
+    <div class="mb-2">
+      <% if flash[:notice] %>
+        <p class="notice bg-green-500 text-white"> <%= notice %> </p>
+      <% end %>
+      <% if flash[:alert]%>
+        <p class="alert bg-red-500 text-white"> <%= alert %> </p>
+      <% end %>
+      <div class="absolute left-5 top-5">
+        <% if user_signed_in? %>
+          <%# <%= link_to "Profile", edit_user_registration_path %>
+          <%= button_to "Logout", destroy_user_session_path, method: "delete", class: "bg-gray-200 px-4 py-2 rounded hover:brightness-90"%>
+        <% else %>
+          <%# <%= link_to "Login", new_user_session_path %>
+          <%# <%= link_to "Sign Up", new_user_registration_path %>
+        <%end%>
+      </div>
+      <%= yield %>
     </div>
 
-    <%= yield %>
-
-   
 
   </body>
 </html>

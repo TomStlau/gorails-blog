@@ -73,3 +73,5 @@ gem "tailwindcss-rails", "~> 2.1"
 gem "aws-sdk-s3", require: false
 
 gem "rack-cors"
+
+gem "pagy", "~> 6.2"
