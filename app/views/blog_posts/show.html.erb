@@ -1,6 +1,11 @@
 
 <div  class="min-h-dvh text-center flex flex-col justify-between" >
+    
+   <%= image_tag @blog_post.cover_image, class: "w-100 h-100" if @blog_post.cover_image.attached?%>
+
     <h1> <%=@blog_post.title%> </h1>
+
+    
     
     <p > <%=@blog_post.content%> </p>
     

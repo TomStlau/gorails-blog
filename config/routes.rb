@@ -11,7 +11,9 @@ Rails.application.routes.draw do
 
   # get "/blog_posts/:id" => "blog_posts#show", as: :blog_post
 
-  resources:blog_posts
+  resources :blog_posts do
+    resource :cover_image, only: [:destroy], module: :blog_posts
+  end
 
 
 end

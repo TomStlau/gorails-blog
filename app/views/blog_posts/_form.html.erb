@@ -10,6 +10,17 @@
         <%= f.label :title %><br>
         <%= f.text_field :title %>
     </p>
+
+    <p>
+        <%= f.label :cover_image %><br> 
+        <% if blog_post.cover_image.present? %>
+            <div id = "<%= dom_id(blog_post, :cover_image)  %>">
+                <%= image_tag(@blog_post.cover_image) %>
+                <%= link_to "Remove image", blog_post_cover_image_path(blog_post), data: { turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+            </div>
+        <% end %>
+        <%= f.file_field :cover_image %>
+    </p>
     <p>
         <%= f.label :content %><br>
         <%= f.rich_text_area :content %>
